@@ -458,7 +458,7 @@ gsap.fromTo(
 )
 
 gsap.from('.model__box:nth-child(1)', {
-	x: -100,
+	scale: 0.5,
 	opacity: 0,
 	duration: 1,
 	ease: 'power2.out',
@@ -480,7 +480,7 @@ gsap.from('.model__box:nth-child(2)', {
 })
 
 gsap.from('.model__box:nth-child(3)', {
-	x: 100,
+	scale: 0.5,
 	opacity: 0,
 	duration: 1,
 	ease: 'power2.out',
