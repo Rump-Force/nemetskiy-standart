@@ -1380,7 +1380,7 @@ sup {
 
 .swiper-wrapper {}
 
-.swiper-slide {
+.reviews__inner .swiper-slide {
 	padding: 40px 40px 40px 45px;
 
 }
