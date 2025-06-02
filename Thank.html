@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/media.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header__inner">
+					<!-- Блок логотипа  -->
+					<div class="header__logo">
+						<a class="header__logo-link" href="index.html">
+							<img
+								src="images/img/logo.svg"
+								alt="logo"
+								class="header__logo-images"
+							/>
+						</a>
+						<p class="header__logo-text">Кухни на заказ в Краснодаре</p>
+					</div>
+					<div class="divider"></div>
+					<!-- Блок информации а времени -->
+					<div class="header__info line">
+						<p class="header__info-text">
+							Отвечаем на звонки с <time>9:00</time> до <time>21:00</time> без
+							выходных
+						</p>
+					</div>
+					<div class="divider"></div>
+					<!-- Блок местоположение  -->
+					<div class="header__address line">
+						<span class="header__address-icons">
+							<img src="images/icons/map.svg" alt="icons-map" />
+						</span>
+						<p class="header__address-text">
+							г. Краснодар, ул. Красных Партизан, 483
+						</p>
+					</div>
+					<div class="divider"></div>
+					<!-- Блок с кнопкой призыва -->
+					<div class="header__action line">
+						<button class="header__button button button--primary open-panel">
+							Рассчитать стоимость
+						</button>
+					</div>
+					<div class="divider"></div>
+					<!-- Блок с телефоном и кнопкой попапа -->
+					<div class="header__contacts line">
+						<a href="tel:" class="header__contacts-link">+7 (8612) 17-93-76</a>
+						<a href="tel:" class="header__contacts-link">+7 (989) 277-94-30</a>
+						<button class="header__contact-btn open-modal">
+							Вам перезвонить?
+						</button>
+					</div>
+
+					<div class="header__burger">
+						<img src="images/icons/menu.svg" alt="menu" />
+					</div>
+				</div>
+
+				<div class="header__menu-box">
+					<nav class="header__menu">
+						<ul class="header__menu-list">
+							<li class="header__menu-item">
+								<a href="#prices" class="header__menu-link">Цены</a>
+								<!--menu-active -->
+							</li>
+							<li class="header__menu-item">
+								<a href="#promotion" class="header__menu-link">Акция</a>
+							</li>
+							<li class="header__menu-item">
+								<a href="#materials" class="header__menu-link">Материалы</a>
+							</li>
+							<li class="header__menu-item">
+								<a href="#how-to-order" class="header__menu-link"
+									>Как заказать</a
+								>
+							</li>
+							<li class="header__menu-item">
+								<a href="#our-works" class="header__menu-link">Наши работы</a>
+							</li>
+							<li class="header__menu-item">
+								<a href="#reviews" class="header__menu-link">Отзывы</a>
+							</li>
+							<li class="header__menu-item">
+								<a href="#contacts" class="header__menu-link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!-- Липкое меню -->
+		<div class="sticky-header">
+			<div class="container">
+				<div class="sticky-header__inner">
+					<a href="index.html" class="sticky-header__logo">
+						<img src="images/img/logo.svg" alt="logo" />
+					</a>
+					<nav class="sticky-header__menu">
+						<ul class="sticky-header__menu-list">
+							<li><a class="sticky-header__link" href="#prices">Цены</a></li>
+							<li>
+								<a class="sticky-header__link" href="#promotion">Акция</a>
+							</li>
+							<li>
+								<a class="sticky-header__link" href="#materials">Материалы</a>
+							</li>
+							<li>
+								<a class="sticky-header__link" href="#how-to-order"
+									>Как заказать</a
+								>
+							</li>
+							<li>
+								<a class="sticky-header__link" href="#our-works">Наши работы</a>
+							</li>
+							<li><a class="sticky-header__link" href="#reviews">Отзывы</a></li>
+							<li>
+								<a class="sticky-header__link" href="#contacts">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="sticky-header_btn">
+						<button
+							class="sticky-header__button button button--primary open-panel"
+						>
+							Рассчитать стоимость
+						</button>
+					</div>
+					<div class="header__burger sticky-header_mobile">
+						<img src="images/icons/menu.svg" alt="menu" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sidebar">
+			<div class="sidebar__close-icons"><i class="bx bx-x"></i></div>
+
+			<nav class="sidebar__menu">
+				<ul class="sidebar__menu-list">
+					<li class="sidebar__menu-item">
+						<a href="#prices" class="sidebar__menu-link">Цены</a>
+					</li>
+					<li class="sidebar__menu-item">
+						<a href="#promotion" class="sidebar__menu-link">Акция</a>
+					</li>
+					<li class="sidebar__menu-item">
+						<a href="#materials" class="sidebar__menu-link">Материалы</a>
+					</li>
+					<li class="sidebar__menu-item">
+						<a href="#how-to-order" class="sidebar__menu-link">Как заказать</a>
+					</li>
+					<li class="sidebar__menu-item">
+						<a href="#our-works" class="sidebar__menu-link">Наши работы</a>
+					</li>
+					<li class="sidebar__menu-item">
+						<a href="#reviews" class="sidebar__menu-link">Отзывы</a>
+					</li>
+					<li class="sidebar__menu-item">
+						<a href="#contacts" class="sidebar__menu-link">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<main class="main">
+			<section class="banner thank-banner">
+				<div class="banner__image">
+					<img
+						class="banner__fon"
+						src="images/img/banner__img.webp"
+						alt="Фоновое изображение"
+					/>
+				</div>
+				<div class="container">
+					<div class="banner__inner">
+						<div class="banner__content content-thank">
+							<h1 class="banner__title thank-title">Спасибо за заявку!</h1>
+							<p class="thank-text">
+								Наш дизайнер свяжется с Вами в ближайшее время!
+							</p>
+						</div>
+						<a href="index.html" class="thank__button-btn button"
+							>Вернуться на Главную</a
+						>
+					</div>
+				</div>
+				<!-- <div class="banner__image">
+					<img
+						class="banner__fon"
+						src="images/img/banner__img.webp"
+						alt="Фоновое изображение"
+					/>
+				</div> -->
+			</section>
+
+			<section class="contacts">
+				<div class="container">
+					<h2 class="contacts-title">Контакты</h2>
+					<div class="map__container">
+						<div id="map"></div>
+						<div class="map__info">
+							<div class="map__info-item">
+								<h3 class="map__info-title">Адрес:</h3>
+								<p class="map__info-text">
+									г. Краснодар, ул. Красных Партизан, 483 (работаем по г.
+									Краснодар)
+								</p>
+							</div>
+							<div class="map__info-item">
+								<h3 class="map__info-title">Телефон:</h3>
+								<a href="tel:78612179376" class="map__info-link"
+									>+7 (8612) 17-93-76</a
+								>
+								<a href="tel:79892779430" class="map__info-link"
+									>+7 (989) 277-94-30</a
+								>
+							</div>
+						</div>
+						<div class="map__info-mobile">
+							<ul class="map__info-mobile-item">
+								<li class="map__info-mobile-items">
+									<img src="images/icons/clock.svg" alt="" />
+									<p class="map__info-mobile-items-text">
+										Отвечаем на звонки<br />
+										с 9:00 до 21:00 без выходных!
+									</p>
+								</li>
+								<li class="map__info-mobile-items">
+									<img src="images/icons/map.svg" alt="" />
+									<p class="map__info-mobile-items-text">
+										г. Краснодар, ул. Красных Партизан, 483
+									</p>
+								</li>
+								<li class="map__info-mobile-items">
+									<img src="images/icons/smartphone.svg" alt="" />
+									<div class="map__info-mobile-items-link">
+										<a href="tel:79882779430">+7 (989) 277-94-30</a>
+										<a href="tel:79882779430">+7 (989) 277-94-30</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<div id="modalOverlay" class="modal-overlay">
+			<div class="modal-window">
+				<p class="modal-text">
+					Оставьте свой номер телефона сейчас и наш дизайнер свяжется с Вами в
+					ближайшее время!
+				</p>
+				<form>
+					<input type="tel" placeholder="Ваш телефон" required />
+					<button type="submit" class="modal-btn button">
+						Получить консультацию
+					</button>
+				</form>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__inner">
+					<div class="footer__information">
+						<h3 class="footer__information-subtitle">
+							© “Немецкий Стандарт” Информация на сайте не является публичной
+							офертой. Настоящий сайт не является интернет-магазином
+						</h3>
+					</div>
+					<div class="footer__reserved">
+						<p class="footer__reserved-text">&copy; 2025 Все права защищены</p>
+						<a href="" class="footer__reserved-lin"
+							>Политика конфиденциальности</a
+						>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="overlay" id="overlay"></div>
+		<div id="panelPopup" class="choice-group-panel panel-popup">
+			<h2 class="group-panel-title">Узнайте цену <span>вашей кухни</span></h2>
+			<div class="choice-group">
+				<h2 class="choice-title">Стиль:</h2>
+				<div class="choice-group-box">
+					<label class="choice">
+						<input type="radio" name="panel1" value="option1" hidden />
+						<img
+							class="choice-img"
+							src="images/img/Option_1.webp"
+							alt="Option 1"
+						/>
+						<p class="choice-text">Современный стиль</p>
+					</label>
+					<label class="choice">
+						<input type="radio" name="panel1" value="option2" hidden />
+						<img
+							class="choice-img"
+							src="images/img/Option_2.webp"
+							alt="Option 2"
+						/>
+						<p class="choice-text">Кухни Лофт</p>
+					</label>
+					<label class="choice">
+						<input type="radio" name="panel1" value="option3" hidden />
+						<img
+							class="choice-img"
+							src="images/img/Option_3.webp"
+							alt="Option 3"
+						/>
+						<p class="choice-text">Классический стиль</p>
+					</label>
+					<label class="choice">
+						<input type="radio" name="panel1" value="option4" hidden />
+						<img
+							class="choice-img"
+							src="images/img/Option_4.webp"
+							alt="Option 4"
+						/>
+						<p class="choice-text">Другое</p>
+					</label>
+				</div>
+			</div>
+
+			<div class="choice-group">
+				<h2 class="choice-title">Форма:</h2>
+				<div class="choice-group-box">
+					<label class="choice-circle circle-boxing">
+						<div class="circle-icon">
+							<input type="radio" name="panel2" value="option1" hidden />
+							<svg
+								width="29"
+								height="4"
+								viewBox="0 0 29 4"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect
+									x="29"
+									width="4"
+									height="29"
+									rx="1"
+									transform="rotate(90 29 0)"
+									fill="#E3010F"
+								/>
+							</svg>
+						</div>
+						<p class="choice-text circle-text">Прямая кухня</p>
+					</label>
+					<label class="choice-circle circle-boxing">
+						<div class="circle-icon">
+							<input type="radio" name="panel2" value="option2" hidden />
+							<svg
+								width="29"
+								height="14"
+								viewBox="0 0 29 14"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect
+									y="4"
+									width="4"
+									height="29"
+									rx="1"
+									transform="rotate(-90 0 4)"
+									fill="#E3010F"
+								/>
+								<rect width="4" height="14" rx="1" fill="#E3010F" />
+							</svg>
+						</div>
+						<p class="choice-text circle-text">Угловая кухня</p>
+					</label>
+					<label class="choice-circle circle-boxing">
+						<div class="circle-icon">
+							<input type="radio" name="panel2" value="option3" hidden />
+							<svg
+								width="30"
+								height="14"
+								viewBox="0 0 30 14"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect width="4" height="14" rx="1" fill="#E3010F" />
+								<rect x="26" width="4" height="14" rx="1" fill="#E3010F" />
+								<rect
+									y="4"
+									width="4"
+									height="30"
+									rx="1"
+									transform="rotate(-90 0 4)"
+									fill="#E3010F"
+								/>
+							</svg>
+						</div>
+						<p class="choice-text circle-text">П-образная кухня</p>
+					</label>
+					<label class="choice-circle circle-boxing">
+						<div class="circle-icon">
+							<input type="radio" name="panel2" value="option4" hidden />
+							<svg
+								width="31"
+								height="14"
+								viewBox="0 0 31 14"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect
+									x="0.5"
+									y="14"
+									width="4"
+									height="30"
+									rx="1"
+									transform="rotate(-90 0.5 14)"
+									fill="#E3010F"
+								/>
+								<rect
+									x="0.5"
+									y="4"
+									width="4"
+									height="30"
+									rx="1"
+									transform="rotate(-90 0.5 4)"
+									fill="#E3010F"
+								/>
+							</svg>
+						</div>
+						<p class="choice-text circle-text">Параллельная кухня</p>
+					</label>
+					<label class="choice-circle circle-boxing">
+						<div class="circle-icon">
+							<input type="radio" name="panel2" value="option5" hidden />
+							<svg
+								width="31"
+								height="14"
+								viewBox="0 0 31 14"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect
+									x="0.5"
+									y="14"
+									width="4"
+									height="19"
+									rx="1"
+									transform="rotate(-90 0.5 14)"
+									fill="#E3010F"
+								/>
+								<rect x="26.5" width="4" height="14" rx="1" fill="#E3010F" />
+								<rect
+									x="0.5"
+									y="4"
+									width="4"
+									height="30"
+									rx="1"
+									transform="rotate(-90 0.5 4)"
+									fill="#E3010F"
+								/>
+							</svg>
+						</div>
+						<p class="choice-text circle-text">Кухня с островом</p>
+					</label>
+					<label class="choice-circle circle-boxing">
+						<div class="circle-icon">
+							<input type="radio" name="panel2" value="option6" hidden />
+							<svg
+								width="31"
+								height="14"
+								viewBox="0 0 31 14"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect
+									x="19.5"
+									y="14"
+									width="4"
+									height="10"
+									rx="1"
+									transform="rotate(-90 19.5 14)"
+									fill="#E3010F"
+								/>
+								<rect
+									x="4.5"
+									y="14"
+									width="4"
+									height="14"
+									rx="1"
+									transform="rotate(180 4.5 14)"
+									fill="#E3010F"
+								/>
+								<rect x="27" width="4" height="14" rx="1" fill="#E3010F" />
+								<rect
+									x="1"
+									y="4"
+									width="4"
+									height="30"
+									rx="1"
+									transform="rotate(-90 1 4)"
+									fill="#E3010F"
+								/>
+							</svg>
+						</div>
+						<p class="choice-text circle-text">Другие формы</p>
+					</label>
+				</div>
+			</div>
+
+			<div class="choice-group">
+				<h2 class="choice-title">Площадь кухни:</h2>
+				<div class="choice-group-box">
+					<label class="choice area">
+						<input type="radio" name="panel3" value="option1" hidden />
+						<h2 class="area-title">До 5 м<sup>2</sup></h2>
+					</label>
+					<label class="choice area">
+						<input type="radio" name="panel3" value="option1" hidden />
+						<h2 class="area-title">До 8 м<sup>2</sup></h2>
+					</label>
+					<label class="choice area">
+						<input type="radio" name="panel3" value="option1" hidden />
+						<h2 class="area-title">До 15 м<sup>2</sup></h2>
+					</label>
+					<label class="choice area">
+						<input type="radio" name="panel3" value="option1" hidden />
+						<h2 class="area-title">Другое</h2>
+					</label>
+				</div>
+			</div>
+
+			<p class="choice-group-panel-text">
+				Оставьте свой номер телефона сейчас и наш дизайнер свяжется с Вами в
+				ближайшее время!
+			</p>
+
+			<form action="" class="group-panel">
+				<input type="tel" name="phone" placeholder="Номер телефона" />
+				<button type="submit" class="group-panel-form button open-panel">
+					Рассчитать стоимость
+				</button>
+			</form>
+		</div>
+
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="js/main.js" defer></script>
+		<!-- defer атрибут что будет загружаться в конце -->
+	</body>
+</html>
