@@ -1857,8 +1857,10 @@
 	}
 
 	.choice-group-box {
-		flex-wrap: wrap;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		/* flex-wrap: wrap;
+		justify-content: center; */
 	}
 
 	.choice {
@@ -1925,6 +1927,16 @@
 		grid-template-columns: repeat(2, 1fr);
 		justify-items: center;
 	}
+
+	.group-panel-title {
+		font-size: 32px;
+		line-height: 115%;
+	}
+
+	.choice-group-panel {
+		padding: 0px 10px 40px 10px;
+		width: 330px;
+	}
 }
 
 @media screen and (max-width: 360px) {
@@ -1954,4 +1966,8 @@
 		border-radius: 0 0 5px 5px;
 		padding: 19px 64.5px;
 	}
+
+
+
+
 }
