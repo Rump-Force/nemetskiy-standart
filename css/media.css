@@ -1459,10 +1459,10 @@
 		max-width: 292px;
 	}
 
-	.model__title,
+	/* .model__title,
 	.model-text {
 		padding-left: 20px;
-	}
+	} */
 
 	.model__inner {
 		padding-inline: 20px;
@@ -1714,7 +1714,7 @@
 	}
 
 	.text-accent {
-		max-width: 284px;
+		/* max-width: 284px; */
 		margin: 0 auto;
 		margin-bottom: 80px;
 
