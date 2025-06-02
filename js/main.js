@@ -58,7 +58,7 @@ function initSwiperIfNeeded() {
 			new Swiper(container, {
 				slidesPerView: 1,
 				spaceBetween: 20,
-				loop: true, 
+				loop: true,
 				loopedSlides: products.length, // Количество слайдов для дублирования
 				pagination: {
 					el: '.swiper-pagination',
@@ -70,9 +70,9 @@ function initSwiperIfNeeded() {
 				},
 				breakpoints: {
 					768: {
-						slidesPerView: 2.15, 
+						slidesPerView: 2.15,
 						spaceBetween: 30,
-						loopedSlides: products.length, 
+						loopedSlides: products.length,
 					},
 				},
 			})
@@ -109,8 +109,40 @@ function initSwiperIfNeeded() {
 			)
 		}
 	}
-}
+	rebindModalAndPanelEvents()
+	function rebindModalAndPanelEvents() {
+		const openButtons = document.querySelectorAll('.open-panel')
+		const panelPopup = document.getElementById('panelPopup')
+		const overlay = document.getElementById('overlay')
 
+		openButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				panelPopup.classList.add('show')
+				overlay.classList.add('show')
+			})
+		})
+
+		overlay.addEventListener('click', () => {
+			panelPopup.classList.remove('show')
+			overlay.classList.remove('show')
+		})
+
+		const modalOverlay = document.getElementById('modalOverlay')
+		const openModalButtons = document.querySelectorAll('.open-modal')
+
+		openModalButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				modalOverlay.classList.add('active')
+			})
+		})
+
+		modalOverlay.addEventListener('click', e => {
+			if (e.target === modalOverlay) {
+				modalOverlay.classList.remove('active')
+			}
+		})
+	}
+}
 
 window.addEventListener('load', initSwiperIfNeeded)
 window.addEventListener('resize', initSwiperIfNeeded)
@@ -126,13 +158,11 @@ const swiperDesign = new Swiper('.design-swiper', {
 	},
 })
 
-
 const swiperReviews = new Swiper('.reviews .swiper', {
 	slidesPerView: 1,
 	spaceBetween: 20,
 	loop: true,
 
-	
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
@@ -143,13 +173,10 @@ const swiperReviews = new Swiper('.reviews .swiper', {
 		prevEl: '.reviews__button-prev',
 	},
 
-
 	scrollbar: {
 		el: '.swiper-scrollbar',
 		draggable: true,
 	},
-
-
 })
 ymaps.ready(function () {
 	var myMap = new ymaps.Map('map', {
@@ -250,10 +277,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /////////////////////////////////////////////////////////////
 
-
 const textEl = document.querySelector('.header__logo-text')
 const text = textEl.textContent
-
 
 textEl.innerHTML = text
 	.split('')
@@ -263,7 +288,6 @@ textEl.innerHTML = text
 			: `<span class="letter">${letter}</span>`
 	})
 	.join('')
-
 
 gsap.fromTo(
 	'.letter',
@@ -358,7 +382,7 @@ gsap.from('.leadership__lest', {
 	ease: 'power2.out',
 	scrollTrigger: {
 		trigger: '.leadership__inner',
-		start: 'top bottom-=200', 
+		start: 'top bottom-=200',
 		toggleActions: 'play none none none',
 	},
 })
@@ -368,7 +392,7 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.utils.toArray('.main__title').forEach(title => {
 	gsap.fromTo(
 		title,
-		{ opacity: 0, y: 100 }, 
+		{ opacity: 0, y: 100 },
 		{
 			opacity: 1,
 			y: 0,
@@ -386,7 +410,6 @@ gsap.utils.toArray('.main__title').forEach(title => {
 gsap.registerPlugin(ScrollTrigger)
 
 const items = document.querySelectorAll('.goods__content-item')
-
 
 const rows = {}
 
@@ -499,19 +522,6 @@ gsap.from('.additional__box-img', {
 	},
 })
 
-// "Набор" заголовков по буквам
-document.querySelectorAll('.additional__box-title').forEach(title => {
-	const text = title.textContent
-	title.innerHTML = text
-		.split('')
-		.map(letter =>
-			letter === ' '
-				? `<span class="additional-letter">&nbsp;</span>`
-				: `<span class="additional-letter">${letter}</span>`
-		)
-		.join('')
-})
-
 gsap.fromTo(
 	'.additional-letter',
 	{ opacity: 0, y: 20 },
@@ -529,7 +539,6 @@ gsap.fromTo(
 	}
 )
 
-
 document.querySelectorAll('.additional__box').forEach(box => {
 	const img = box.querySelector('.additional__box-img')
 	const btn = box.querySelector('.additional__box-btn')
@@ -543,7 +552,6 @@ document.querySelectorAll('.additional__box').forEach(box => {
 	})
 })
 gsap.registerPlugin(ScrollTrigger)
-
 
 gsap.from('.kitchens__box', {
 	opacity: 0,
@@ -559,7 +567,6 @@ gsap.from('.kitchens__box', {
 		toggleActions: 'play none none none',
 	},
 })
-
 
 gsap.from('.kitchens__box-img', {
 	scale: 0.7,
@@ -591,7 +598,6 @@ gsap.fromTo(
 	}
 )
 
-
 gsap.fromTo(
 	'.kitchens__box-text span',
 	{ scale: 1, color: '#e3010f' },
@@ -608,7 +614,6 @@ gsap.fromTo(
 		},
 	}
 )
-
 
 const stepsTimeline = gsap.timeline({
 	scrollTrigger: {
@@ -629,7 +634,7 @@ stepsTimeline
 		ease: 'power3.out',
 		stagger: 0.2,
 	})
-	
+
 	.from(
 		'.steps__box-wrapper',
 		{
@@ -676,7 +681,7 @@ const reviewsTimeline = gsap.timeline({
 })
 
 reviewsTimeline
-	
+
 	.from('.reviews__inner', {
 		duration: 1.2,
 		scale: 0.8,
@@ -684,7 +689,7 @@ reviewsTimeline
 		opacity: 0,
 		ease: 'power3.out',
 	})
-	
+
 	.from(
 		'.reviews__box',
 		{
@@ -695,7 +700,7 @@ reviewsTimeline
 			ease: 'back.out(1.7)',
 			stagger: 0.2,
 		},
-		'-=0.8' 
+		'-=0.8'
 	)
 
 	.from(
@@ -708,8 +713,8 @@ reviewsTimeline
 			ease: 'elastic.out(1, 0.6)',
 			stagger: 0.15,
 		},
-		'-=1' 
-	) 
+		'-=1'
+	)
 reviewsTimeline
 	.fromTo(
 		'.reviews__star',
@@ -721,7 +726,7 @@ reviewsTimeline
 			ease: 'back.out(2)',
 			stagger: 0.1, // Задержка между звездами
 		},
-		'-=0.5' 
+		'-=0.5'
 	)
 	.to(
 		'.reviews__star',
@@ -871,4 +876,3 @@ gsap
 		},
 		'-=0.4'
 	)
-
