@@ -795,92 +795,80 @@ gsap
 		'-=0.4'
 	)
 
-const scheduleTitle = document.querySelector('.schedule-title')
-if (scheduleTitle) {
-    const text = scheduleTitle.textContent
-    scheduleTitle.innerHTML = text
-        .split('')
-        .map(letter =>
-            letter === ' '
-                ? `<span class="schedule-letter">&nbsp;</span>`
-                : `<span class="schedule-letter">${letter}</span>`
-        )
-        .join('')
-
-    // 2. Основная анимация блока
-    gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: '.schedule__inner',
-					start: 'top 80%',
-					toggleActions: 'play none none none',
-				},
-			})
-			// Взрывной эффект букв
-			.fromTo(
-				'.schedule-letter',
-				{
-					opacity: 0,
-					y: 80,
-					scale: 2.5,
-					rotate: () => gsap.utils.random(-90, 90),
-					textShadow: '0 0 40px #fff, 0 0 80px #e3010f',
-					color: '#e3010f',
-					filter: 'blur(8px)',
-				},
-				{
-					opacity: 1,
-					y: 0,
+// 2. Основная анимация блока
+gsap
+	.timeline({
+		scrollTrigger: {
+			trigger: '.schedule__inner',
+			start: 'top 80%',
+			toggleActions: 'play none none none',
+		},
+	})
+	// Взрывной эффект букв
+	.fromTo(
+		'.schedule-letter',
+		{
+			opacity: 0,
+			y: 80,
+			scale: 2.5,
+			rotate: () => gsap.utils.random(-90, 90),
+			textShadow: '0 0 40px #fff, 0 0 80px #e3010f',
+			color: '#e3010f',
+			filter: 'blur(8px)',
+		},
+		{
+			opacity: 1,
+			y: 0,
+			scale: 1,
+			rotate: 0,
+			textShadow: '0 0 0px #fff',
+			color: '#222',
+			filter: 'blur(0px)',
+			duration: 1.1,
+			stagger: 0.04,
+			ease: 'expo.out',
+		}
+	)
+	// Вылет формы с подпрыгиванием и легкой вибрацией
+	.from(
+		'.schedule__form',
+		{
+			y: 120,
+			scale: 0.7,
+			opacity: 0,
+			rotate: 8,
+			filter: 'blur(10px)',
+			duration: 0.8,
+			ease: 'back.out(2.5)',
+		},
+		'-=0.5'
+	)
+	// Вспышка кнопки и пульсация
+	.fromTo(
+		'.schedule__form-btn',
+		{
+			scale: 0.7,
+			boxShadow: '0 0 0px #fff',
+			background: 'linear-gradient(90deg, #e3010f 0%, #e3010f 100%)',
+			opacity: 0,
+		},
+		{
+			scale: 1.15,
+			boxShadow: '0 0 40px #e3010f, 0 0 80px #e3010f',
+			opacity: 1,
+			duration: 0.3,
+			ease: 'power4.out',
+			onComplete: () => {
+				gsap.to('.schedule__form-btn', {
 					scale: 1,
-					rotate: 0,
-					textShadow: '0 0 0px #fff',
-					color: '#222',
-					filter: 'blur(0px)',
-					duration: 1.1,
-					stagger: 0.04,
-					ease: 'expo.out',
-				}
-			)
-			// Вылет формы с подпрыгиванием и легкой вибрацией
-			.from(
-				'.schedule__form',
-				{
-					y: 120,
-					scale: 0.7,
-					opacity: 0,
-					rotate: 8,
-					filter: 'blur(10px)',
-					duration: 0.8,
-					ease: 'back.out(2.5)',
-				},
-				'-=0.5'
-			)
-			// Вспышка кнопки и пульсация
-			.fromTo(
-				'.schedule__form-btn',
-				{
-					scale: 0.7,
 					boxShadow: '0 0 0px #fff',
-					background: 'linear-gradient(90deg, #e3010f 0%, #e3010f 100%)',
-					opacity: 0,
-				},
-				{
-					scale: 1.15,
-					boxShadow: '0 0 40px #e3010f, 0 0 80px #e3010f',
-					opacity: 1,
 					duration: 0.3,
-					ease: 'power4.out',
-					onComplete: () => {
-						gsap.to('.schedule__form-btn', {
-							scale: 1,
-							boxShadow: '0 0 0px #fff',
-							duration: 0.3,
-							repeat: 2,
-							yoyo: true,
-							ease: 'power1.inOut',
-						})
-					},
-				},
-				'-=0.4'
-			)
-}
+					repeat: 2,
+					yoyo: true,
+					ease: 'power1.inOut',
+				})
+			},
+		},
+		'-=0.4'
+	)
+
